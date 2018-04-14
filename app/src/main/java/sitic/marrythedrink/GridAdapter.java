@@ -38,7 +38,7 @@ public class GridAdapter extends BaseAdapter{
 
         if(view == null){
             LayoutInflater layoutInflater= (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-            //view = layoutInflater.inflate(R.layout.vista_cerveza.null);
+            view = layoutInflater.inflate(R.layout.vista_cerveza,null);
         }
 
         TextView nombre = (TextView) view.findViewById(R.id.tvPuntaje);

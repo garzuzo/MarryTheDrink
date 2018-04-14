@@ -4,11 +4,11 @@ import android.widget.ImageView;
 
 public class Cerveza {
 
-    private ImageView imagenCerveza;
+    private String imagenCerveza;
     private String nombreCerveza;
     private double puntaje;
 
-    public  Cerveza(ImageView imagenCerveza, String nombreCerveza, int puntaje){
+    public  Cerveza(String imagenCerveza, String nombreCerveza, int puntaje){
 
         this.imagenCerveza= imagenCerveza;
         this.nombreCerveza = nombreCerveza;
@@ -19,7 +19,7 @@ public class Cerveza {
         return puntaje;
     }
 
-    public ImageView getImagenCerveza() {
+    public String getImagenCerveza() {
         return imagenCerveza;
     }
 
