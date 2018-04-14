@@ -1,10 +1,14 @@
 package sitic.marrythedrink;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import java.util.ArrayList;
 import android.content.Context;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 
 public class GridAdapter extends BaseAdapter{
 
@@ -31,6 +35,22 @@ public class GridAdapter extends BaseAdapter{
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+
+        if(view == null){
+            LayoutInflater layoutInflater= (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+            //view = layoutInflater.inflate(R.layout.vista_cerveza.null);
+        }
+
+        TextView nombre = (TextView) view.findViewById(R.id.tvPuntaje);
+        nombre.setText(lista.get(i).getNombreCerveza());
+
+        ImageView imagen = view.findViewById(R.id.imgCerveza);
+        //imagen.set();
+
+        TextView puntaje = view.findViewById(R.id.tvPuntaje);
+        puntaje.setText(lista.get(i).getPuntaje() + "");
+
+
+        return view;
     }
 }
