@@ -1,5 +1,9 @@
 package sitic.marrythedrink;
 
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.DrawableWrapper;
+import android.net.Uri;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +12,7 @@ import java.util.ArrayList;
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.widget.GridView;
 
 public class GridAdapter extends BaseAdapter{
 
@@ -18,6 +22,10 @@ public class GridAdapter extends BaseAdapter{
         this.context= context;
         this.lista=lista;
     }
+
+
+
+
     @Override
     public int getCount() {
         return lista.size();
@@ -38,19 +46,22 @@ public class GridAdapter extends BaseAdapter{
 
         if(view == null){
             LayoutInflater layoutInflater= (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-            view = layoutInflater.inflate(R.layout.vista_cerveza,null);
+           view = layoutInflater.inflate(R.layout.vista_cerveza,null);
         }
+
 
         TextView nombre = (TextView) view.findViewById(R.id.tvPuntaje);
         nombre.setText(lista.get(i).getNombreCerveza());
 
-        ImageView imagen = view.findViewById(R.id.imgCerveza);
-        //imagen.set();
+        ImageView imagen = view.findViewById(R.id.ivCerveza);
+       // int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+        //imagen.setImageDrawable(lista.get(i).getImagenCerveza());
+        imagen.setImageResource(R.drawable.c3);
+        String r=lista.get(i).getImagenCerveza();
+
 
         TextView puntaje = view.findViewById(R.id.tvPuntaje);
-        puntaje.setText(lista.get(i).getPuntaje() + "");
-
-
+        puntaje.setText(lista.get(i).getPuntaje() +"");
         return view;
     }
 }
