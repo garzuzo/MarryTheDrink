@@ -19,11 +19,9 @@ public class Cerveza {
         return puntaje;
     }
 
-    public String getImagenCerveza() {
-        return imagenCerveza;
+    public String getImagenCerveza() { return imagenCerveza;
     }
 
-    public String getNombreCerveza() {
-        return nombreCerveza;
+    public String getNombreCerveza() {return nombreCerveza;
     }
 }

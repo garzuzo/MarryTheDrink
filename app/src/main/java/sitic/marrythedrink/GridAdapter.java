@@ -23,9 +23,6 @@ public class GridAdapter extends BaseAdapter{
         this.lista=lista;
     }
 
-
-
-
     @Override
     public int getCount() {
         return lista.size();

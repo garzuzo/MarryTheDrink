@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class GridViewCerveza extends AppCompatActivity {
     private GridView gridView;
-    private GridAdapter adapter;
+    private GridAdapter gAdapter;
 
     private ArrayList<Cerveza> arr;
 
@@ -22,7 +22,7 @@ public class GridViewCerveza extends AppCompatActivity {
         gridView = (GridView) findViewById(R.id.gridViewCerveza);
         arr = new ArrayList<Cerveza>();
         llenarListaCervezas();
-        GridAdapter gAdapter = new GridAdapter(this, arr);
+        gAdapter = new GridAdapter(this, arr);
         gridView.setAdapter(gAdapter);
 
     }
