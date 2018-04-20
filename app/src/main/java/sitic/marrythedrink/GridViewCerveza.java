@@ -22,8 +22,9 @@ public class GridViewCerveza extends AppCompatActivity {
 
     private boolean chooseCerveza;
 
-    private ArrayList<Cerveza> arr;
+    private ArrayList<Cerveza> despliegueCervezas;
 
+    private ArrayList<Comida>despliegueComidas;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,20 +32,21 @@ public class GridViewCerveza extends AppCompatActivity {
         setContentView(R.layout.gridview_cerveza);
 
         gridView = (GridView) findViewById(R.id.gridViewCerveza);
-        arr = new ArrayList<Cerveza>();
-        llenarListaCervezas();
-        gAdapter = new GridAdapter(this, arr);
-        gridView.setAdapter(gAdapter);
+
+
         chooseCerveza=false;
     }
 
-    public void llenarListaCervezas() {
+    public void inicializarComidas(ArrayList<Comida> arr) {
 
-        for (int i = 1; i <= 5; i++) {
+        despliegueComidas=arr;
+        gAdapter = new GridAdapter(this,chooseCerveza);
+        gridView.setAdapter(gAdapter);
+    }
+    public void inicializarCervezas(ArrayList<Cerveza> arr) {
 
-            String url="@drawable/c"+i+".jpg";
-            Cerveza cActual = new Cerveza(url, "BBC Miel", i);
-            arr.add(cActual);
-        }
+        despliegueCervezas=arr;
+        gAdapter = new GridAdapter(this,chooseCerveza);
+        gridView.setAdapter(gAdapter);
     }
 }

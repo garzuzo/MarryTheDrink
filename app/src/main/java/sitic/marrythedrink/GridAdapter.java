@@ -12,20 +12,28 @@ import android.widget.TextView;
 public class GridAdapter extends BaseAdapter{
 
     private Context context;
-    private ArrayList<Cerveza> lista;
-    public GridAdapter(Context context, ArrayList<Cerveza> lista){
+    private ArrayList<Cerveza> listaCervezas;
+    private ArrayList<Comida> listaComidas;
+private boolean isCerveza;
+
+
+    public GridAdapter(Context context,boolean isCerveza){
         this.context= context;
-        this.lista=lista;
+        this.isCerveza=isCerveza;
+        if(isCerveza)
+        this.listaCervezas=listaCervezas;
+        else
+            this.listaComidas=listaComidas;
     }
 
     @Override
     public int getCount() {
-        return lista.size();
+        return isCerveza?listaCervezas.size():listaComidas.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return lista.get(i);
+        return  isCerveza?listaCervezas.get(i):listaComidas.get(i);
     }
 
     @Override
@@ -41,19 +49,37 @@ public class GridAdapter extends BaseAdapter{
            view = layoutInflater.inflate(R.layout.vistas,null);
         }
 
+if(listaCervezas!=null) {
+    TextView nombre = (TextView) view.findViewById(R.id.tvPuntaje);
+    nombre.setText(listaCervezas.get(i).getName());
+      ImageView imagen = view.findViewById(R.id.ivCerveza);
+    String ruta=listaCervezas.get(i).getRuta();
+    Context context=imagen.getContext();
+    int idImg=context.getResources().getIdentifier(ruta,"drawable",context.getPackageName());
+imagen.setImageResource(idImg);
 
-        TextView nombre = (TextView) view.findViewById(R.id.tvPuntaje);
-        nombre.setText(lista.get(i).getNombreCerveza());
-
-        ImageView imagen = view.findViewById(R.id.ivCerveza);
-       // int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-        //imagen.setImageDrawable(lista.get(i).getImagenCerveza());
-        imagen.setImageResource(R.drawable.c3);
-        String r=lista.get(i).getImagenCerveza();
 
 
-        TextView puntaje = view.findViewById(R.id.tvPuntaje);
-        puntaje.setText(lista.get(i).getPuntaje() +"");
+
+       TextView puntaje = view.findViewById(R.id.tvPuntaje);
+     puntaje.setText(listaCervezas.get(i).getScore() +"");
+}else{
+    TextView nombre = (TextView) view.findViewById(R.id.tvPuntaje);
+    nombre.setText(listaComidas.get(i).getName());
+    ImageView imagen = view.findViewById(R.id.ivCerveza);
+    String ruta=listaComidas.get(i).getRuta();
+    Context context=imagen.getContext();
+    int idImg=context.getResources().getIdentifier(ruta,"drawable",context.getPackageName());
+    imagen.setImageResource(idImg);
+
+
+
+
+    TextView puntaje = view.findViewById(R.id.tvPuntaje);
+    puntaje.setText(listaComidas.get(i).getScore() +"");
+
+
+}
         return view;
     }
 }
