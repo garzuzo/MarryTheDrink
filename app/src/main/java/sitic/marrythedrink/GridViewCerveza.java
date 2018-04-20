@@ -12,6 +12,16 @@ public class GridViewCerveza extends AppCompatActivity {
     private GridView gridView;
     private GridAdapter gAdapter;
 
+    public boolean isChooseCerveza() {
+        return chooseCerveza;
+    }
+
+    public void setChooseCerveza(boolean chooseCerveza) {
+        this.chooseCerveza = chooseCerveza;
+    }
+
+    private boolean chooseCerveza;
+
     private ArrayList<Cerveza> arr;
 
     @Override
