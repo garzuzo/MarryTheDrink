@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -30,18 +29,35 @@
     </TableLayout>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/nombreCerveza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cajica BBC"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="37dp" />
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="28dp" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imagenCerveza"
+        android:layout_width="182dp"
+        android:layout_height="204dp"
         app:srcCompat="@drawable/c4"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="113dp" />
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <TextView
+        android:id="@+id/descripcionCerveza"
+        android:layout_width="338dp"
+        android:layout_height="39dp"
+        android:text="Esta bebida es acompañada bien con las siguientes comidas"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <ListView
+        android:id="@+id/listComidas"
+        android:layout_width="343dp"
+        android:layout_height="133dp"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="362dp" />
+
 </android.support.constraint.ConstraintLayout>
