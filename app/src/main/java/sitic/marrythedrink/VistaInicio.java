@@ -9,9 +9,12 @@ import android.widget.GridView;
 
 import java.util.ArrayList;
 import android.widget.Button;
+import android.widget.TextView;
+
 public class VistaInicio extends AppCompatActivity implements View.OnClickListener {
 
-//GridViewCerveza gv;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public class VistaInicio extends AppCompatActivity implements View.OnClickListen
 
         bComidas.setOnClickListener(this);
 
+
     }
 
 
@@ -30,15 +34,23 @@ public class VistaInicio extends AppCompatActivity implements View.OnClickListen
     public void onClick(View view) {
         if(view.getId()==R.id.btnCervezas) {
          //   gv = new GridViewCerveza();
-           // startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
-            setContentView(R.layout.gridview_cerveza);
 
+
+              startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
+
+            setContentView(R.layout.gridview_cerveza);
+            TextView tAct=(TextView) findViewById(R.id.txtBuscar);
+            tAct.setText("Busca tu cerveza");
+           // gv.setChooseCerveza(true);
           //  gv.setChooseCerveza(true);
         }else  if(view.getId()==R.id.btnComidas) {
           //  gv = new GridViewCerveza();
-            //startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
+
+
+        //   startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
             setContentView(R.layout.gridview_cerveza);
-          //  gv.setChooseCerveza(true);
+           TextView tAct=(TextView) findViewById(R.id.txtBuscar);
+           tAct.setText("Busca tu comida");
         }
     }
 }

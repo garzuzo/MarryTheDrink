@@ -12,34 +12,38 @@
         tools:ignore="MissingConstraints"
 
         tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="3dp">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Puntaje: "
+            app:layout_constraintTop_toBottomOf="@+id/tvNombre"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="401dp" />
+            tools:layout_editor_absoluteX="16dp" />
 
         <TextView
             android:id="@+id/tvPuntaje"
             android:layout_width="wrap_content"
             android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:text="."
+            app:layout_constraintStart_toEndOf="@+id/textView3"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="95dp"
-            tools:layout_editor_absoluteY="396dp" />
+            tools:layout_editor_absoluteY="342dp" />
 
         <TextView
             android:id="@+id/tvNombre"
             android:layout_width="92dp"
             android:layout_height="23dp"
+            android:layout_marginTop="8dp"
             android:text="."
+            app:layout_constraintTop_toBottomOf="@+id/ivCerveza"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="321dp" />
+            tools:layout_editor_absoluteX="16dp" />
 
         <ImageView
             android:id="@+id/ivCerveza"
