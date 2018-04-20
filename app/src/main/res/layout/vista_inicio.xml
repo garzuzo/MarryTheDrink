@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="337dp"
+        android:layout_height="378dp"
+        app:srcCompat="@drawable/tabla"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marry The Drink"
+        android:textSize="40"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/btnCervezas"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:text="Cervezas"
+        tools:ignore="MissingConstraints"
+        android:onClick="onClickCervezas"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="345dp" />
+
+    <Button
+        android:id="@+id/btnComidas"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:text="Comidas"
+        android:onClick="onClickComidas"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="417dp" />
 </android.support.constraint.ConstraintLayout>
