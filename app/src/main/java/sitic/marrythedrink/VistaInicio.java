@@ -29,8 +29,17 @@ private ArrayList<Comida>comidas;
         bCervezas.setOnClickListener(this);
 
         bComidas.setOnClickListener(this);
+try {
+    inicializarCervezas();
+}catch(Exception e){
+e.printStackTrace();
 
-
+}
+try {
+    inicializarComidas();
+}catch(Exception e){
+    e.printStackTrace();
+}
     }
 
 public void inicializarCervezas()throws IOException{
