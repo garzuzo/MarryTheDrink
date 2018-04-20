@@ -1,18 +1,10 @@
 package sitic.marrythedrink;
 
-import android.widget.ImageView;
+public class Comida {
 
-public class Cerveza {
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     private String id;
+    private String name;
     private String category;
     private double score;
     private int sweet;
@@ -22,7 +14,8 @@ public class Cerveza {
     private int spicy;
     private String ruta;
 
-    public Cerveza(String id,String name, String category, String ruta, double score, int sweet, int salty, int acid, int bitter, int spicy) {
+    public Comida(String id,String name, String category, String ruta, double score, int sweet, int salty, int acid, int bitter, int spicy) {
+
         this.id=id;
         this.name = name;
         this.category = category;
@@ -34,8 +27,6 @@ public class Cerveza {
         this.spicy = spicy;
         this.ruta = ruta;
     }
-
-    private String name;
 
     public String getName() {
         return name;
@@ -108,6 +99,10 @@ public class Cerveza {
     public void setRuta(String ruta) {
         this.ruta = ruta;
     }
+
+
+
+
 
 
 
