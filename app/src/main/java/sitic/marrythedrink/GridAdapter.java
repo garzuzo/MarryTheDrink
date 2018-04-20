@@ -1,9 +1,5 @@
 package sitic.marrythedrink;
 
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.DrawableWrapper;
-import android.net.Uri;
-import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +8,6 @@ import java.util.ArrayList;
 import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.GridView;
 
 public class GridAdapter extends BaseAdapter{
 
@@ -43,7 +38,7 @@ public class GridAdapter extends BaseAdapter{
 
         if(view == null){
             LayoutInflater layoutInflater= (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-           view = layoutInflater.inflate(R.layout.vista_cerveza,null);
+           view = layoutInflater.inflate(R.layout.vistas,null);
         }
 
 

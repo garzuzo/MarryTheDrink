@@ -34,7 +34,6 @@ public class GridViewCerveza extends AppCompatActivity {
             String url="@drawable/c"+i+".jpg";
             Cerveza cActual = new Cerveza(url, "BBC Miel", i);
             arr.add(cActual);
-
         }
     }
 }
