@@ -9,38 +9,36 @@ import android.widget.GridView;
 
 import java.util.ArrayList;
 import android.widget.Button;
-public class VistaInicio extends AppCompatActivity {
+public class VistaInicio extends AppCompatActivity implements View.OnClickListener {
 
-GridViewCerveza gv;
-    Button bCervezas= (Button) findViewById(R.id.btnCervezas);
-    Button bComidas= (Button) findViewById(R.id.btnComidas);
+//GridViewCerveza gv;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vista_inicio);
+        Button bCervezas= (Button) findViewById(R.id.btnCervezas);
+        Button bComidas= (Button) findViewById(R.id.btnComidas);
+        bCervezas.setOnClickListener(this);
 
-
+        bComidas.setOnClickListener(this);
 
     }
 
 
-    public void onClickCervezas(View view){
+    @Override
+    public void onClick(View view) {
+        if(view.getId()==R.id.btnCervezas) {
+         //   gv = new GridViewCerveza();
+           // startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
+            setContentView(R.layout.gridview_cerveza);
 
-//Intent intent=new Intent(VistaInicio.this,GridViewCerveza.class);
-
-  //      VistaInicio.this.startActivity(intent);
-        if(view==bCervezas) {
-            gv = new GridViewCerveza();
-            startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
-            gv.setChooseCerveza(true);
-        }
-    }
-
-    public void onClickComidas(View view){
-        if(view==bComidas) {
-            gv = new GridViewCerveza();
-            startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
-            gv.setChooseCerveza(true);
+          //  gv.setChooseCerveza(true);
+        }else  if(view.getId()==R.id.btnComidas) {
+          //  gv = new GridViewCerveza();
+            //startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
+            setContentView(R.layout.gridview_cerveza);
+          //  gv.setChooseCerveza(true);
         }
     }
 }

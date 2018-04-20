@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:text="Cervezas"
         tools:ignore="MissingConstraints"
-        android:onClick="onClickCervezas"
+        android:onClick="onClick"
         tools:layout_editor_absoluteX="122dp"
         tools:layout_editor_absoluteY="345dp" />
 
@@ -40,7 +40,7 @@
         android:layout_width="118dp"
         android:layout_height="wrap_content"
         android:text="Comidas"
-        android:onClick="onClickComidas"
+        android:onClick="onClick"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="122dp"
         tools:layout_editor_absoluteY="417dp" />
