@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.GridView;
 
 import java.util.ArrayList;
-
+import android.widget.Button;
 public class VistaInicio extends AppCompatActivity {
 
 GridViewCerveza gv;
+    Button bCervezas= (Button) findViewById(R.id.btnCervezas);
+    Button bComidas= (Button) findViewById(R.id.btnComidas);
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,15 +29,18 @@ GridViewCerveza gv;
 //Intent intent=new Intent(VistaInicio.this,GridViewCerveza.class);
 
   //      VistaInicio.this.startActivity(intent);
-gv=new GridViewCerveza();
-        startActivity(new Intent(VistaInicio.this,GridViewCerveza.class));
-gv.setChooseCerveza(true);
-
+        if(view==bCervezas) {
+            gv = new GridViewCerveza();
+            startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
+            gv.setChooseCerveza(true);
+        }
     }
 
     public void onClickComidas(View view){
-        gv=new GridViewCerveza();
-        startActivity(new Intent(VistaInicio.this,GridViewCerveza.class));
-        gv.setChooseCerveza(true);
+        if(view==bComidas) {
+            gv = new GridViewCerveza();
+            startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
+            gv.setChooseCerveza(true);
+        }
     }
 }

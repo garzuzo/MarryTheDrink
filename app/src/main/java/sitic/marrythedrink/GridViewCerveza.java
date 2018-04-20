@@ -24,6 +24,10 @@ public class GridViewCerveza extends AppCompatActivity {
 
     private ArrayList<Cerveza> arr;
 
+    public GridViewCerveza(){
+
+        chooseCerveza=false;
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
