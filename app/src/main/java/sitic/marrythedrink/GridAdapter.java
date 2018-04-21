@@ -17,13 +17,13 @@ public class GridAdapter extends BaseAdapter{
 private boolean isCerveza;
 
 
-    public GridAdapter(Context context,boolean isCerveza){
+    public GridAdapter(Context context,boolean isCerveza,ArrayList arr){
         this.context= context;
         this.isCerveza=isCerveza;
         if(isCerveza)
-        this.listaCervezas=listaCervezas;
+        this.listaCervezas=arr;
         else
-            this.listaComidas=listaComidas;
+            this.listaComidas=arr;
     }
 
     @Override

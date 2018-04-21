@@ -1,10 +1,12 @@
 package sitic.marrythedrink;
 
+import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -35,18 +37,32 @@ public class GridViewCerveza extends AppCompatActivity {
 
 
         chooseCerveza=false;
-    }
 
-    public void inicializarComidas(ArrayList<Comida> arr) {
+    }
+public GridViewCerveza(){
+
+}
+    public void inicializarComidas(ArrayList<Comida> arr,String m) {
 
         despliegueComidas=arr;
-        gAdapter = new GridAdapter(this,chooseCerveza);
+
+        gridView = (GridView) findViewById(R.id.gridViewCerveza);
+        gAdapter = new GridAdapter(this,chooseCerveza,despliegueComidas);
+
         gridView.setAdapter(gAdapter);
+        TextView tAct=(TextView) findViewById(R.id.txtBuscar);
+        tAct.setText("Busca tu comida"+m);
     }
-    public void inicializarCervezas(ArrayList<Cerveza> arr) {
+    public void inicializarCervezas(ArrayList<Cerveza> arr,String m) {
 
         despliegueCervezas=arr;
-        gAdapter = new GridAdapter(this,chooseCerveza);
+        ((Activity) this).setContentView(R.layout.gridview_cerveza);
+
+        gridView = (GridView) findViewById(R.id.gridViewCerveza);
+
+        gAdapter = new GridAdapter(this,chooseCerveza,despliegueCervezas);
         gridView.setAdapter(gAdapter);
+        TextView tAct=(TextView) findViewById(R.id.txtBuscar);
+        tAct.setText("Busca tu cerveza"+m);
     }
 }

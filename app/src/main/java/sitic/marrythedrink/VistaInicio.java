@@ -19,7 +19,7 @@ public class VistaInicio extends AppCompatActivity implements View.OnClickListen
 
 private ArrayList<Cerveza> cervezas;
 private ArrayList<Comida>comidas;
-
+private GridViewCerveza gv;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,13 +30,13 @@ private ArrayList<Comida>comidas;
 
         bComidas.setOnClickListener(this);
 try {
-    inicializarCervezas();
+   // inicializarCervezas();
 }catch(Exception e){
 e.printStackTrace();
 
 }
 try {
-    inicializarComidas();
+   // inicializarComidas();
 }catch(Exception e){
     e.printStackTrace();
 }
@@ -125,20 +125,26 @@ public void inicializarComidas()throws Exception{
 }
     @Override
     public void onClick(View view) {
+       // setContentView(R.layout.gridview_cerveza);
+        gv = new GridViewCerveza();
+        Intent intent=new Intent(VistaInicio.this,gv.getClass());
+
+        startActivity(intent);
+        finish();
         if(view.getId()==R.id.btnCervezas) {
-         //   gv = new GridViewCerveza();
+
 
 
              // startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
 
-            setContentView(R.layout.gridview_cerveza);
-            TextView tAct=(TextView) findViewById(R.id.txtBuscar);
-            tAct.setText("Busca tu cerveza");
-           // gv.setChooseCerveza(true);
+            //setContentView(R.layout.gridview_cerveza);
+
           //  gv.setChooseCerveza(true);
-            //gv.inicializarComidas(cervezas);
 
 
+            cervezas=new ArrayList<>();
+
+            comidas=new ArrayList<>();
             String msg="cervezas:\n";
             for (int i=0;i<cervezas.size();i++){
                 msg+=cervezas.get(i).toString();
@@ -149,16 +155,21 @@ public void inicializarComidas()throws Exception{
                 msg+=comidas.get(i).toString();
 
             }
-            tAct.setText(msg);
+            //  gv.setChooseCerveza(true);
+            gv.inicializarCervezas(cervezas,msg);
+          //  tAct.setText(msg);
         }else  if(view.getId()==R.id.btnComidas) {
-          //  gv = new GridViewCerveza();
+
+
 
 
         //   startActivity(new Intent(VistaInicio.this, GridViewCerveza.class));
-            setContentView(R.layout.gridview_cerveza);
-           TextView tAct=(TextView) findViewById(R.id.txtBuscar);
-           tAct.setText("Busca tu comida");
-            //gv.inicializarComidas(cervezas);
+
+
+
+            cervezas=new ArrayList<>();
+
+            comidas=new ArrayList<>();
             String msg="cervezas:\n";
             for (int i=0;i<cervezas.size();i++){
                 msg+=cervezas.get(i).toString();
@@ -169,7 +180,9 @@ public void inicializarComidas()throws Exception{
                 msg+=comidas.get(i).toString();
 
             }
-            tAct.setText(msg);
+            gv.inicializarComidas(comidas,msg);
+          //  tAct.setText(msg);
         }
+
     }
 }

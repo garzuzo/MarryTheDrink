@@ -5,59 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
-
     <TextView
-        android:id="@+id/nombreCerveza"
+        android:id="@+id/tvNombreCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cajica BBC"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="28dp" />
+        tools:layout_editor_absoluteY="28dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imagenCerveza"
+        android:id="@+id/imagenCB"
         android:layout_width="182dp"
         android:layout_height="204dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreCB"
         app:srcCompat="@drawable/c4"
         tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="84dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/descripcionCerveza"
+        android:id="@+id/tvDescripcionCB"
         android:layout_width="338dp"
         android:layout_height="39dp"
+        android:layout_marginTop="8dp"
         android:text="Esta bebida es acompañada bien con las siguientes comidas"
+        app:layout_constraintTop_toBottomOf="@+id/imagenCB"
         tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="300dp" />
+        tools:ignore="MissingConstraints" />
 
     <ListView
-        android:id="@+id/listComidas"
+        android:id="@+id/listCB"
         android:layout_width="343dp"
         android:layout_height="133dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescripcionCB"
         tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="362dp" />
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
