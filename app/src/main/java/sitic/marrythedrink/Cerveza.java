@@ -13,7 +13,13 @@ public class Cerveza {
     }
 
     private String id;
+    private String name;
+
     private String category;
+    private String brand;
+    private String color;
+    private String alcohol;
+
     private double score;
     private int sweet;
     private int salty;
@@ -22,7 +28,7 @@ public class Cerveza {
     private int spicy;
     private String ruta;
 
-    public Cerveza(String id,String name, String category, String ruta, double score, int sweet, int salty, int acid, int bitter, int spicy) {
+    public Cerveza(String id,String name, String category,String brand,String color,String alcohol, String ruta, double score, int sweet, int salty, int acid, int bitter, int spicy) {
         this.id=id;
         this.name = name;
         this.category = category;
@@ -33,9 +39,11 @@ public class Cerveza {
         this.bitter = bitter;
         this.spicy = spicy;
         this.ruta = ruta;
+      this.brand=brand;
+         this.color=color;
+        this.alcohol=alcohol;
     }
 
-    private String name;
 
     public String getName() {
         return name;

@@ -29,7 +29,13 @@
                 ></meta-data>
 
         </activity>
+        <activity android:name=".InfoCerveza"
+            android:parentActivityName=".GridViewCerveza">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GridViewCerveza"
+                ></meta-data>
 
+        </activity>
     </application>
     
 

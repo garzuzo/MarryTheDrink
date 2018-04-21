@@ -19,7 +19,9 @@ public class VistaInicio extends AppCompatActivity implements View.OnClickListen
 
 private ArrayList<Cerveza> cervezas;
 private ArrayList<Comida>comidas;
+
 private GridViewCerveza gv;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,13 +32,13 @@ private GridViewCerveza gv;
 
         bComidas.setOnClickListener(this);
 try {
-   // inicializarCervezas();
+    inicializarCervezas();
 }catch(Exception e){
 e.printStackTrace();
 
 }
 try {
-   // inicializarComidas();
+   inicializarComidas();
 }catch(Exception e){
     e.printStackTrace();
 }
@@ -48,7 +50,8 @@ public void inicializarCervezas()throws IOException{
 cervezas=new ArrayList<Cerveza>();
 
     URL url =new URL ("http://sitic.emedia.co/cervezas.php"); //URL!
-    HttpURLConnection connection=(HttpURLConnection)url.openConnection();
+
+   HttpURLConnection connection=(HttpURLConnection)url.openConnection();
     connection.setRequestMethod("GET");
     connection.setDoOutput(true);
     connection.setConnectTimeout(5000);
@@ -56,7 +59,6 @@ cervezas=new ArrayList<Cerveza>();
     connection.connect();
 
 
-    String result = "";
 
     BufferedReader lect = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
@@ -68,16 +70,19 @@ cervezas=new ArrayList<Cerveza>();
 
         String id=act[0];
         String name=act[1];
-        String category=act[1];
-        String ruta="b"+act[0];
-        double score=Double.parseDouble(act[2]);
-        int sweet=Integer.parseInt(act[3]);
-        int salty=Integer.parseInt(act[4]);
-        int acid=Integer.parseInt(act[5]);
-        int bitter=Integer.parseInt(act[6]);
-        int spicy=Integer.parseInt(act[7]);
+        String category=act[2];
+        String brand=act[3];
+        String color=act[4];
+        String alcohol=act[5];
+        String ruta="b"+act[6];
+        double score=Double.parseDouble(act[7]);
+        int sweet=Integer.parseInt(act[8]);
+        int salty=Integer.parseInt(act[9]);
+        int acid=Integer.parseInt(act[10]);
+        int bitter=Integer.parseInt(act[11]);
+        int spicy=Integer.parseInt(act[12]);
 
-        Cerveza cAct=new Cerveza(id,name,category,ruta,score,sweet,salty,acid,bitter,spicy);
+        Cerveza cAct=new Cerveza(id,name,category,brand,color,alcohol,ruta,score,sweet,salty,acid,bitter,spicy);
         cervezas.add(cAct);
     }
 
@@ -87,13 +92,13 @@ cervezas=new ArrayList<Cerveza>();
 public void inicializarComidas()throws Exception{
     comidas=new ArrayList<Comida>();
     URL url =new URL ("http://sitic.emedia.co/comidas.php"); //URL!
+
     HttpURLConnection connection=(HttpURLConnection)url.openConnection();
     connection.setRequestMethod("GET");
     connection.setDoOutput(true);
     connection.setConnectTimeout(5000);
     connection.setReadTimeout(5000);
     connection.connect();
-
 
 
     BufferedReader lect = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -129,6 +134,7 @@ public void inicializarComidas()throws Exception{
         gv = new GridViewCerveza();
         Intent intent=new Intent(VistaInicio.this,gv.getClass());
 
+      //  intent.putex
         startActivity(intent);
         finish();
         if(view.getId()==R.id.btnCervezas) {

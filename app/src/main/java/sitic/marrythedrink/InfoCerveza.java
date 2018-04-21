@@ -26,7 +26,7 @@ public class InfoCerveza extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.infocerveza);
 
-        listView = (ListView)findViewById(R.id.listComidas);
+        listView = (ListView)findViewById(R.id.listCB);
 
         if(isCerveza){
             arrayC = arrayComidas();
